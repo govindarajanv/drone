@@ -32,7 +32,7 @@ steps:
     - failure
 trigger:
   branch:
-  - master
+  - develop
   event:
   - push
 services:
