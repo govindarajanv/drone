@@ -1,3 +1,11 @@
+- &notify_on_failure
+    image: plugins/slack
+    settings:
+      room: general
+      webhook: https://hooks.slack.com/services/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
+    when:
+      status:
+      - failure
 kind: pipeline
 name: frontend
 
@@ -34,7 +42,7 @@ steps:
     event:
     - push
     branch:
-    - master
+    - feature
 - name: detached_steps
   image: node
   detach: true
@@ -50,7 +58,7 @@ steps:
     - failure
 trigger:
   branch:
-  - develop
+  - feature
   event:
   - push
 services:
