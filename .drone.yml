@@ -17,6 +17,7 @@ steps:
     - push
     branch:
     - master
+    - develop
 - name: static_code_analysis
   image: govindarajanv/my-docker-whale:latest  
 - name: detached_steps
