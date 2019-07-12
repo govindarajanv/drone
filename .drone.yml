@@ -1,3 +1,4 @@
+aliases-notification-triggers:
 - &notify_on_failure
     image: plugins/slack
     settings:
