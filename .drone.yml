@@ -19,7 +19,7 @@ steps:
     - master
 - name: static_code_analysis
   image: harbur/sonarqube:latest  
-- name: detached_commands
+- name: detached_steps
   image: node
   detach: true
   commands:
