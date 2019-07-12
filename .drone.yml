@@ -22,12 +22,12 @@ steps:
   detach: true
   commands:
   - df -h
-services:
-- name: database
-  image: mysql
-  entrypoint: [ mysqld ]
 - name: notify
   image: plugins/slack
   settings:
     room: general
     webhook: https://hooks.slack.com/services/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
+services:
+- name: database
+  image: mysql
+  entrypoint: [ mysqld ]
