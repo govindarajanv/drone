@@ -9,5 +9,7 @@ steps:
     - chmod +x ./gradlew
     - ./gradlew test
   when:
+    event:
+    - push
     branch:
     - master
