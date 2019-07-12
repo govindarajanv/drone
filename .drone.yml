@@ -1,3 +1,4 @@
+aliases-deployment-triggers:
 notify_on_failure: &notify_on_failure
     image: plugins/slack
     settings:
