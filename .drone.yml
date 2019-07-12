@@ -8,6 +8,4 @@ steps:
     - GRADLE_USER_HOME=~/.gradle
   commands:
   - ./gradlew test
-  when:
-    branch:
-    - master
+
