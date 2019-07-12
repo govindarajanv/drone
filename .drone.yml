@@ -17,6 +17,11 @@ steps:
     - push
     branch:
     - master
+- name: detached_commands
+  image: node
+  detach: true
+  commands:
+  - df -h
 - name: notify
   image: plugins/slack
   settings:
