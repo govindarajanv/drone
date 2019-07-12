@@ -1,4 +1,3 @@
-aliases-deployment-triggers:
 notify_on_failure: &notify_on_failure
     image: plugins/slack
     settings:
@@ -7,7 +6,7 @@ notify_on_failure: &notify_on_failure
     when:
       status:
       - failure
----
+
 kind: pipeline
 name: frontend
 
