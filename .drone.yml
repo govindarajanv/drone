@@ -17,7 +17,7 @@ steps:
   - npm install
   - npm test
 - name: notify
-<<: *notify_on_failure
+   *notify_on_failure
 ---
 kind: pipeline
 name: backend
@@ -44,7 +44,7 @@ steps:
   commands:
   - df -h
 - name: notify
-<<: *notify_on_failure
+    *notify_on_failure
 trigger:
   branch:
   - feature
