@@ -3,10 +3,10 @@ name: frontend
 
 steps:
 - name: build
-  image: node
+  image: node:8.6.0
   commands:
   - npm install
-  - npm test
+  - npm run build
 ---
 kind: pipeline
 name: backend
