@@ -17,7 +17,7 @@ steps:
     settings:
       room: general
       webhook: https://hooks.slack.com/services/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
-    << *notify_on_failure
+    <<: *notify_on_failure
 ---
 kind: pipeline
 name: backend
@@ -48,7 +48,7 @@ steps:
     settings:
       room: general
       webhook: https://hooks.slack.com/services/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
-    << *notify_on_failure
+    <<: *notify_on_failure
 trigger:
   branch:
   - feature
