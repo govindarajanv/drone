@@ -32,11 +32,6 @@ steps:
   when:
     status:
     - failure
-trigger:
-  branch:
-  - master
-  event:
-  - push
 services:
 - name: database
   image: mysql
