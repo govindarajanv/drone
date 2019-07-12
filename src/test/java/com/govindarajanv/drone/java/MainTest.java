@@ -11,8 +11,8 @@ public class MainTest extends TestCase {
 
     @Test
     public void testGetOne() {
-        assertThat(Main.getOne(), is("Hi"));   
-        assertThat(Main.getOne(), is(not("Bye")));
+        assertThat(Main.greet(), is("Hi"));   
+        assertThat(Main.greet(), is(not("Bye")));
     }
 
 }
