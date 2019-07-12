@@ -22,6 +22,10 @@ steps:
   detach: true
   commands:
   - df -h
+services:
+- name: database
+  image: mysql
+  entrypoint: [ mysqld ]
 - name: notify
   image: plugins/slack
   settings:
