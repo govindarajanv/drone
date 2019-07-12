@@ -7,6 +7,7 @@ notify_on_failure: &notify_on_failure
     when:
       status:
       - failure
+---
 kind: pipeline
 name: frontend
 
