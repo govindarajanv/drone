@@ -1,9 +1,5 @@
 notify_on_failure: &notify_on_failure
-    image: plugins/slack
-    settings:
-      room: general
-      webhook: https://hooks.slack.com/services/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
-    when:
+   when:
       status:
       - failure
 
@@ -17,7 +13,11 @@ steps:
   - npm install
   - npm test
 - name: notify
-   << *notify_on_failure
+    image: plugins/slack
+    settings:
+      room: general
+      webhook: https://hooks.slack.com/services/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
+    << *notify_on_failure
 ---
 kind: pipeline
 name: backend
@@ -44,7 +44,11 @@ steps:
   commands:
   - df -h
 - name: notify
-   << *notify_on_failure
+    image: plugins/slack
+    settings:
+      room: general
+      webhook: https://hooks.slack.com/services/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
+    << *notify_on_failure
 trigger:
   branch:
   - feature
