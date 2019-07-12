@@ -31,11 +31,6 @@ steps:
   detach: true
   commands:
   - df -h
-- name: publish
-  image: plugins/scp
-  when:
-    target:
-    - production
 - name: notify
   image: plugins/slack
   settings:
