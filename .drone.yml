@@ -17,8 +17,6 @@ steps:
     - push
     branch:
     - master
-- name: static_code_analysis
-  image: harbur/sonarqube:latest  
 - name: detached_steps
   image: node
   detach: true
