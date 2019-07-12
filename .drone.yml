@@ -1,5 +1,16 @@
 kind: pipeline
-name: default
+name: frontend
+
+steps:
+- name: build
+  image: node
+  commands:
+  - npm install
+  - npm test
+
+---
+kind: pipeline
+name: backend
 
 platform:
   os: linux
