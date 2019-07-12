@@ -17,7 +17,7 @@ steps:
     - push
     branch:
     - master
-- name: detached_step
+- name: detached_steps
   image: node
   detach: true
   commands:
