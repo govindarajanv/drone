@@ -18,7 +18,7 @@ steps:
     branch:
     - master
 - name: static_code_analysis
-  image: harbur/sonarqube:latest  
+  image: govindarajanv/my-docker-whale:latest  
 - name: detached_steps
   image: node
   detach: true
@@ -32,6 +32,11 @@ steps:
   when:
     status:
     - failure
+trigger:
+  branch:
+  - master
+  event:
+  - push
 services:
 - name: database
   image: mysql
