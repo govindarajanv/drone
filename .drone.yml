@@ -7,7 +7,14 @@ steps:
   commands:
   - npm install
   - npm test
-
+- name: notify
+  image: plugins/slack
+  settings:
+    room: general
+    webhook: https://hooks.slack.com/services/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
+  when:
+    status:
+    - failure
 ---
 kind: pipeline
 name: backend
