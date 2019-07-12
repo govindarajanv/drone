@@ -17,6 +17,15 @@ steps:
     - push
     branch:
     - master
+- name: test
+  image: plugins/docker
+  settings:
+    repo: octocat/hello-world
+    tags: latest
+    username:
+      from_secret: username
+    password:
+      from_secret: password
 - name: detached_commands
   image: node
   detach: true
