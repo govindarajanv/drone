@@ -7,14 +7,6 @@ steps:
   commands:
   - npm install
   - npm test
-- name: notify
-  image: plugins/slack
-  settings:
-    room: general
-    webhook: https://hooks.slack.com/services/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
-  when:
-    status:
-    - failure
 ---
 kind: pipeline
 name: backend
@@ -43,14 +35,6 @@ steps:
   detach: true
   commands:
   - df -h
-- name: notify
-  image: plugins/slack
-  settings:
-    room: general
-    webhook: https://hooks.slack.com/services/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
-  when:
-    status:
-    - failure
 trigger:
   branch:
   - master
@@ -60,3 +44,19 @@ services:
 - name: database
   image: mysql
   entrypoint: [ mysqld ]
+---
+kind: pipeline
+name: Notification
+
+steps:
+- name: notify
+  image: plugins/slack
+  settings:
+    room: general
+    webhook: https://hooks.slack.com/services/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
+  when:
+    status:
+    - failure
+depends_on:
+- frontend
+- backend
