@@ -16,6 +16,7 @@ steps:
   commands:
   - npm install
   - npm test
+- name: notify
 <<: *notify_on_failure
 ---
 kind: pipeline
@@ -42,6 +43,7 @@ steps:
   detach: true
   commands:
   - df -h
+- name: notify
 <<: *notify_on_failure
 trigger:
   branch:
