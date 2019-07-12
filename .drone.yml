@@ -1,4 +1,5 @@
-notify_on_failure: &notify_on_failure
+notify_on_failure: 
+- &notify_on_failure
    when:
       status:
       - failure
