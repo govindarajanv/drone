@@ -6,7 +6,7 @@ steps:
   image: node:8.6.0
   commands:
   - npm install
-  - npm run buildr
+  - npm run build
 ---
 kind: pipeline
 name: backend
