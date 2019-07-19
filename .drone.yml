@@ -29,12 +29,36 @@ steps:
   commands:
     - export GRADLE_USER_HOME=~/.gradle
     - chmod +x ./gradlew
+    - ./gradlew compileJava
     - ./gradlew test
   when:
     event:
     - push
     branch:
-    - master
+    - develop
+- name: test
+  image: java:openjdk-7
+  commands:
+    - export GRADLE_USER_HOME=~/.gradle
+    - chmod +x ./gradlew
+    - ./gradlew test
+  when:
+    event:
+    - push
+    branch:
+    - develop
+- name: code coverage
+  image: java:openjdk-7
+  commands:
+    - export GRADLE_USER_HOME=~/.gradle
+    - chmod +x ./gradlew
+    - ./gradlew jacocoTestReport
+    - ./gradlew jacocoTestCoverageVerification
+  when:
+    event:
+    - push
+    branch:
+    - develop
 - name: detached_step
   image: node
   detach: true
