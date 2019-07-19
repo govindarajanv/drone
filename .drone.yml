@@ -46,8 +46,7 @@ steps:
     room: general
     webhook: https://hooks.slack.com/services/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
   when:
-    status:
-    - failure
+    status: [ success, failure ]
 trigger:
   branch:
   - develop
