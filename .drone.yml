@@ -45,7 +45,8 @@ steps:
   settings:
     room: general
     webhook: https://hooks.slack.com/services/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
-  <<: *notify_on_failure
+  when:
+    status: [ success, failure ]
 trigger:
   branch:
   - feature
