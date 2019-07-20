@@ -49,7 +49,7 @@ kind: pipeline
 name: Notification
 
 steps:
-- name: notify
+- name: notification
   image: plugins/slack
   settings:
     room: general
