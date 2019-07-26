@@ -7,7 +7,7 @@ public class Main {
     }
 
     public static String greet() {
-        return "Hi";
+        return "Hi, How are you?";
     }
 
 }
